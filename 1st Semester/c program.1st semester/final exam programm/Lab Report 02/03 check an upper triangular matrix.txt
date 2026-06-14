@@ -1,0 +1,32 @@
+//Check if a given square matrix is an upper triangular matirx:
+
+#include <stdio.h>
+
+int main(){
+    int size;
+    printf("Enter the matrix size: ");
+    scanf("%d",&size);
+    
+    int matrix[size][size];
+    printf("Enter the element: \n");
+    for(int i=0; i<size; i++){
+        for(int k=0; k<size; k++){
+            scanf("%d",&matrix[i][k]);
+        }
+    }
+    
+    //Check if a given square matrix is an upper traingular matirx: 
+    int sum=0;
+    for(int i=1; i<size; i++){
+        for(int k=0; k<size-2; k++){
+            sum += matrix[i][k];
+        }
+    }
+    if(sum==0){
+        printf("The given matrix is upper triangular matrix.\n");
+    }
+    else{
+        printf("The given matrix isn't upper traiangular matrix.");
+    }
+    return 0;
+}

@@ -1,0 +1,53 @@
+Lab Report – Basic Programming Test
+
+1. Experiment No: 02
+
+
+2. Experiment Name: Simple C Program to Add Two Numbers
+
+
+3. Introduction:
+In this experiment, we write and run a simple C program to add two numbers entered by the user.
+This helps us understand basic concepts like variables, input, output, and arithmetic operations in C.
+
+
+4. Codes/Figure (C Language):
+
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2, sum;
+    
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+    
+    sum = num1 + num2;
+    
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+
+
+
+5. Explanation:
+
+#include <stdio.h> → Includes standard input/output functions.
+
+int num1, num2, sum; → Declares three integer variables.
+
+scanf → Takes input from the user.
+
+sum = num1 + num2; → Adds the two numbers.
+
+printf → Displays the result on the screen.
+
+
+
+6. Discussion:
+This program is a basic example of how to take input, process it, and display the output in C.
+From this, we learned how to use variables, scanf, and printf.
+We also understood how arithmetic operations work in programming.

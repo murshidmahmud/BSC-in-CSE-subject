@@ -1,0 +1,43 @@
+//  Find Rotated Array Elements to the Right:
+
+
+#include <stdio.h>
+
+int main() {
+   int size;
+   printf("Enter your array size: ");
+   scanf("%d", &size);
+   
+   int arr[size];
+   
+   for(int i = 0; i< size; i++)
+   {
+       printf("%d index: ", i);
+       scanf("%d", &arr[i]);
+   }
+   
+   //printf("Array elements is: ");
+   //for(int i = 0; i<size; i++)
+   //{
+   //    printf("%d\t", arr[i]);
+  // }
+  
+   // Rotated Array Elements to the Right:
+   
+   int k = arr[size - 1];
+   for(int i = size -1; i > 0; i--)
+   {
+       arr[i] = arr[i-1];
+   }
+   
+   arr[0] = k;
+   printf("\nRotated array elements in right: ");
+   
+   for(int i = 0; i < size; i++)
+   {
+       printf("%d\t", arr[i]);
+   }
+   
+
+    return 0;
+}

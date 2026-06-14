@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(){
+    char str_one[50];
+    char str_two[50];
+    
+    printf("Enter the first name: ");
+    scanf("%s", str_one);  
+    
+    printf("Enter the second name: ");
+    scanf("%s", str_two);
+    
+    int length = 0;
+    for(int i = 0; str_one[i] != '\0'; i++){
+        length++;
+    }
+
+    int length2 = 0;
+    for(int i = 0; str_two[i] != '\0'; i++){
+        length2++;
+    }
+    
+    printf("The length of string is : %d\n", length);
+    printf("The length of string is: %d\n", length2);
+}

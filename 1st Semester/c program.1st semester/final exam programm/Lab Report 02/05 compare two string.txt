@@ -1,0 +1,24 @@
+// To compare the two string:
+
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    char a[50];
+    printf("Enter the first name: ");
+    scanf("%s",&a);
+    
+    char b[50];
+    printf("Enter the seceond name: ");
+    scanf("%s",&b);
+    
+    // Compare two string: 
+
+    if(strcmp(a,b) ==0){
+        printf("String are equal.\n");
+    }
+    else{
+        printf("String are not equal.");
+    }
+    return 0;
+}

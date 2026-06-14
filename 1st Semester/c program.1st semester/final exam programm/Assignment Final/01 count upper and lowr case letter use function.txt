@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<ctype.h>
+
+void count(char str[], int *upper, int *lower){
+    *upper = 0;
+    *lower = 0;
+    
+    for(int i=0; str[i] !='\0'; i++){
+        if(isupper(str[i])){
+            (*upper)++;
+        }
+        else if(islower(str[i])){
+            (*lower)++;
+        }
+    }
+}
+
+int main(){
+    int upper,lower;
+    char str[50];
+    
+    printf("Enter a string: ");
+    scanf("%s",&str);
+    
+    count(str, &upper, &lower);
+    
+    printf("uppercase latter : %d\n",upper);
+    printf("lowercase latter: %d",lower);
+    
+    return 0;
+}

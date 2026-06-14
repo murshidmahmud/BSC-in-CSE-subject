@@ -1,0 +1,121 @@
+Lab Report
+1. Experiment No: 01
+
+
+2. Experiment Name:
+Implementation of Stack using Linked List in C
+
+
+3. Introduction:
+A stack is a linear data structure that follows the LIFO (Last In, First Out) principle.
+We can implement a stack using an array or a linked list.
+In a linked list implementation, each element (node) contains data and a pointer to the next node.
+Using a linked list allows dynamic memory allocation, meaning the stack size can grow and shrink during execution.
+
+
+4. Codes/Figure (C Code):
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Structure for a stack node
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+// Function to push an element into the stack
+void push(struct Node** top, int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = *top;
+    *top = newNode;
+    printf("%d pushed to stack\n", value);
+}
+
+// Function to pop an element from the stack
+void pop(struct Node** top) {
+    if (*top == NULL) {
+        printf("Stack Underflow\n");
+        return;
+    }
+    struct Node* temp = *top;
+    printf("%d popped from stack\n", temp->data);
+    *top = (*top)->next;
+    free(temp);
+}
+
+// Function to display the stack
+void display(struct Node* top) {
+    if (top == NULL) {
+        printf("Stack is empty\n");
+        return;
+    }
+    printf("Stack elements: ");
+    while (top != NULL) {
+        printf("%d ", top->data);
+        top = top->next;
+    }
+    printf("\n");
+}
+
+int main() {
+    struct Node* top = NULL;
+
+    push(&top, 10);
+    push(&top, 20);
+    push(&top, 30);
+
+    display(top);
+
+    pop(&top);
+    display(top);
+
+    return 0;
+}
+
+
+
+5. Explanation:
+
+Structure Definition:
+
+struct Node contains data (integer) and next (pointer to next node).
+
+Push Operation:
+
+Creates a new node.
+
+Sets new node’s next pointer to the current top.
+
+Updates top pointer to new node.
+
+Pop Operation:
+
+Removes the node at the top.
+
+Updates top to the next node.
+
+Frees the removed node’s memory.
+
+Display Function:
+
+Traverses the linked list from top to bottom and prints all elements.
+
+
+
+6. Discussion:
+This program demonstrates stack implementation using a linked list in C.
+Advantages of using a linked list:
+
+No need to define stack size in advance.
+
+Memory is allocated dynamically.
+
+Limitations:
+
+Requires extra memory for the pointer in each node.
+
+Slightly slower than array-based implementation because of dynamic memory allocation.
+
+In this experiment, we successfully performed push, pop, and display operations using linked list-based stack implementation.

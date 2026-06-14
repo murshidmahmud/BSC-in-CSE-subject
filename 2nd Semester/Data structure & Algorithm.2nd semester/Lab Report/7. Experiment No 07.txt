@@ -1,0 +1,107 @@
+1. Experiment No: 01
+
+2. Experiment Name: Implementation of Queue using Linked List in C
+
+3. Introduction:
+A queue is a linear data structure that works on the principle of FIFO (First In, First Out).
+Using a linked list for a queue means that we dynamically allocate memory for each element, so there’s no fixed size limit.
+A queue has two main operations:
+
+Enqueue → Add element at the rear (end)
+
+Dequeue → Remove element from the front (start)
+
+
+4. Codes/Figure (C Program):
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Structure for each node
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* front = NULL;
+struct Node* rear = NULL;
+
+// Function to add element to queue
+void enqueue(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
+
+    if (rear == NULL) { 
+        front = rear = newNode;
+    } else {
+        rear->next = newNode;
+        rear = newNode;
+    }
+    printf("%d inserted into queue\n", value);
+}
+
+// Function to remove element from queue
+void dequeue() {
+    if (front == NULL) {
+        printf("Queue is empty\n");
+        return;
+    }
+    struct Node* temp = front;
+    front = front->next;
+
+    if (front == NULL) {
+        rear = NULL;
+    }
+    printf("%d removed from queue\n", temp->data);
+    free(temp);
+}
+
+// Function to display queue
+void display() {
+    if (front == NULL) {
+        printf("Queue is empty\n");
+        return;
+    }
+    struct Node* temp = front;
+    printf("Queue: ");
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
+// Main function
+int main() {
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    display();
+    dequeue();
+    display();
+    return 0;
+}
+
+
+5. Explanation:
+
+Node Structure → Each node contains data and a pointer next to link to the next element.
+
+front → Points to the first element of the queue.
+
+rear → Points to the last element of the queue.
+
+enqueue() → Creates a new node and adds it to the rear.
+
+dequeue() → Removes the node from the front.
+
+display() → Prints all elements from front to rear.
+
+
+
+6. Discussion:
+In this experiment, a queue was implemented using a linked list.
+The advantage of using a linked list is that the queue size can grow or shrink dynamically, unlike arrays where the size is fixed.
+The operations enqueue and dequeue both work in O(1) time complexity.
+However, using linked lists requires extra memory for storing pointers.

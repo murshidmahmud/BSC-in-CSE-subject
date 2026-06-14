@@ -1,0 +1,96 @@
+1. Experiment No:05
+
+2. Experiment Name:
+Basic Operations on Linked List in C
+
+
+3. Introduction:
+A linked list is a data structure where elements (nodes) are connected using pointers.
+Each node contains:
+
+Data (value)
+
+Pointer to the next node.
+
+It allows dynamic memory allocation, easy insertion, and deletion compared to arrays.
+
+Basic operations include:
+
+Creating a linked list
+
+Insertion (at beginning, end, or specific position)
+
+Deletion (by value or position)
+
+Traversal (displaying list)
+
+
+4. Codes/Figure (C language):
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* head = NULL;
+
+// Create and insert at end
+void insertEnd(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
+
+    if (head == NULL) {
+        head = newNode;
+    } else {
+        struct Node* temp = head;
+        while (temp->next != NULL)
+            temp = temp->next;
+        temp->next = newNode;
+    }
+}
+
+// Display list
+void display() {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    insertEnd(10);
+    insertEnd(20);
+    insertEnd(30);
+    display();
+    return 0;
+}
+
+
+5. Explanation:
+
+struct Node → defines a node with data and next pointer.
+
+insertEnd() → creates a new node and attaches it at the end.
+
+display() → traverses the list and prints all nodes.
+
+In main() → 10, 20, 30 are inserted, then the list is displayed as 10 -> 20 -> 30 -> NULL.
+
+
+6. Discussion:
+This experiment demonstrates basic linked list creation and traversal in C.
+We used dynamic memory allocation with malloc().
+Advantages:
+
+No fixed size like arrays.
+
+Easy insertion and deletion.
+Limitation:
+
+Slower access compared to arrays because elements are not stored in continuous memory.

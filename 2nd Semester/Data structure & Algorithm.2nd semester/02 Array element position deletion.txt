@@ -1,0 +1,35 @@
+#include<stdio.h>
+
+int main(){
+    
+    int size;
+    printf("Enter the number: ");
+    scanf("%d",&size);
+    
+    int arr[size];
+
+    for(int i=0; i<size; i++){
+        printf("%d index: ", i);
+        scanf("%d", &arr[i]);
+    }
+    
+    //Array element deletion: 
+
+    int pos;
+    printf("Choose the position:");
+    scanf("%d",&pos);
+    
+    for(int i=pos; i<=size-1 ; i++){
+        
+        arr[i] = arr[i+1];
+    }
+    
+    size--;
+    
+    printf("Show the new array: \n");
+    for(int i=0; i<size; i++){
+        
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}

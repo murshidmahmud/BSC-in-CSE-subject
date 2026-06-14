@@ -1,0 +1,66 @@
+1. Experiment No: 04
+
+2. Experiment Name:
+Introduction to Searching Algorithm (Linear Search & Binary Search)
+
+
+3. Introduction:
+Searching algorithms are methods used to find specific data within a collection of data.
+In this experiment, we will learn about two basic searching algorithms:
+
+Linear Search – checks each element one by one until the target is found.
+
+Binary Search – works on sorted data and repeatedly divides the search range in half.
+
+Searching is important because it is used in many real-life applications like finding a contact in a phone book, locating files in a computer, or searching for products online.
+
+
+
+4. Codes/Figure (C Program Example):
+
+Example: Linear Search in C
+
+
+#include <stdio.h>
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int n = 5, key, i, found = 0;
+
+    printf("Enter number to search: ");
+    scanf("%d", &key);
+
+    for (i = 0; i < n; i++) {
+        if (arr[i] == key) {
+            printf("Element found at position %d\n", i + 1);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found)
+        printf("Element not found.\n");
+
+    return 0;
+}
+
+
+5. Explanation:
+We declared an array of 5 elements.
+
+The user enters a number to search.
+
+The program checks each element one by one (linear search).
+
+If found, it prints the position; otherwise, it says “Element not found.”
+
+
+
+6. Discussion:
+From this experiment, we learned:
+
+Linear Search is simple but can be slow for large datasets.
+
+Binary Search is faster but works only for sorted data.
+
+Choosing the right search algorithm depends on the size and order of the data.

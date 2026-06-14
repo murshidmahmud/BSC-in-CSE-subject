@@ -1,0 +1,61 @@
+1. Experiment No: 01
+
+
+2. Experiment Name:
+Introduction to Data Structure and Basic Operations
+
+
+
+3. Introduction:
+Data Structure is a way of organizing, managing, and storing data so that it can be accessed and modified efficiently.
+Common types are:
+
+Array (stores elements in a continuous memory location)
+
+Linked List (elements connected by pointers)
+
+Stack (Last In First Out – LIFO)
+
+Queue (First In First Out – FIFO)
+
+Tree & Graph (hierarchical and network-based structures)
+
+In this experiment, we will write a basic program to store and display data using arrays.
+
+
+
+4. Codes/Figure (C Program):
+Example: Simple Array Implementation
+
+
+#include <stdio.h>
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int i;
+
+    printf("Array Elements:\n");
+    for(i = 0; i < 5; i++) {
+        printf("%d\n", arr[i]);
+    }
+
+    return 0;
+}
+
+
+5. Explanation:
+
+Step 1: We created an integer array with 5 elements.
+
+Step 2: We initialized the array with values {10, 20, 30, 40, 50}.
+
+Step 3: We used a for loop to print each element of the array.
+
+This shows how data is stored and accessed sequentially in memory.
+
+
+
+6. Discussion:
+In this experiment, we learned how to store data in a simple array and access it sequentially.
+Arrays are easy to use but have a fixed size, so in future experiments we will explore more flexible data structures like linked lists.
+

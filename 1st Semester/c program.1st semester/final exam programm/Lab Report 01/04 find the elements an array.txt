@@ -1,0 +1,47 @@
+// find the Find the Element from the Array:
+
+
+#include <stdio.h>
+
+int main() {
+   int size;
+   printf("Enter your array size: ");
+   scanf("%d", &size);
+   
+   int arr[size];
+   
+   for(int i = 0; i< size; i++)
+   {
+       printf("%d index: ", i);
+       scanf("%d", &arr[i]);
+   }
+   
+   //printf("Array elements is: ");
+   //for(int i = 0; i<size; i++)
+   //{
+   //    printf("%d\t", arr[i]);
+  // }
+  
+   // Find the Element from the Array
+   
+   int value, flag = 0;
+   printf("\nEnter searching elements: ");
+   scanf("%d",&value);
+   
+   for(int i=0; i<size; i++)
+   {
+       if(arr[i] == value)
+       {
+           printf("Element %d found at index %d", value, i);
+           flag = 1;
+           break;
+       }
+   }
+   
+   if(flag ==0)
+   {
+       printf("Your provide element not found in the array.");
+   }
+
+    return 0;
+}
